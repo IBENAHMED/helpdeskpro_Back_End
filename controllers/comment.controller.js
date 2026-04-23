@@ -42,7 +42,6 @@ export const addComment = async (req, res) => {
     res.status(201).json(result.rows[0]);
 
   } catch (err) {
-    console.log(err);
     res.status(500).json({message: 'Server error'});
   }
 };
@@ -61,7 +60,6 @@ export const findUserComment = async (req, res) => {
     res.json(result.rows);
 
   } catch (err) {
-    console.log(err);
     res.status(500).json({message: 'Server error'});
   }
 };

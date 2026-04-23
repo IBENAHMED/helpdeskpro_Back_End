@@ -68,7 +68,6 @@ export const ticketFilter = async (req, res) => {
     res.json(result.rows);
 
   } catch (err) {
-    console.log(err);
     res.status(500).json({message: 'Server error'});
   }
 };
@@ -89,7 +88,6 @@ export const singleTicket = async (req, res) => {
     res.json(result.rows[0]);
 
   } catch (err) {
-    console.log(err);
     res.status(500).json({message: 'Server error'});
   }
 };
@@ -110,7 +108,6 @@ export const ticketById = async (req, res) => {
     res.json(result.rows[0]);
 
   } catch (err) {
-    console.log(err);
     res.status(500).json({message: 'Server error'});
   }
 };
@@ -124,7 +121,6 @@ export const allTickets = async (req, res) => {
     res.json(result.rows);
 
   } catch (err) {
-    console.log(err);
     res.status(500).json({message: 'Server error'});
   }
 };
@@ -183,8 +179,6 @@ export const updateStatus = async (req, res) => {
     const {id} = req.params;
     const {status: newStatus} = req.body;
 
-    console.log(id)
-
     const ticketResult = await client.query(
       `SELECT status FROM tickets WHERE id = $1`,
       [id]
@@ -213,7 +207,6 @@ export const updateStatus = async (req, res) => {
     res.json(result.rows[0]);
 
   } catch (err) {
-    console.log(err);
     res.status(500).json({message: 'Server error'});
   }
 };
@@ -254,7 +247,6 @@ export const assign = async (req, res) => {
     res.json(result.rows[0]);
 
   } catch (err) {
-    console.log(err);
     res.status(500).json({message: 'Server error'});
   }
 };
